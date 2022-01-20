@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome to Blogs!</h1>
+{% for blog in bloglistkey %}
+<a href="{% url 'blog:blogdetail' blog.id %}"><h1>{{ blog.title }}</h1></a>
+<p>Created Date {{ blog.createdtime }}</p>
+<p>{{ blog.content }}</p>
+{% endfor %}
+{% endblock %}
